@@ -23,7 +23,6 @@ public class DynamicLightTsarevets : MonoBehaviour
     bool justTurnedOff = false;
     
 
-    int lastState = 0;
 
 
     // 0 is normal,
@@ -49,7 +48,6 @@ public class DynamicLightTsarevets : MonoBehaviour
                 specialLight = false;
                 TsarevetsLight.GetComponent<Light>().color = Color.white;
                 TsarevetsLight.GetComponent<Light>().intensity = 0.5f;
-                lastState = 1;
                 justTurnedOff = true;
             }
 
@@ -58,7 +56,6 @@ public class DynamicLightTsarevets : MonoBehaviour
         if (Tsarevets.transform.up.y > 0f) //Upright 
         {
             Debug.Log("Currently upright.");
-            lastState = 0;
             if (UpsideDown == true && specialLight == false && justTurnedOff == false) //Activated the toggle, turn light on.
             {
                 Debug.Log("Went upright after the toggle, with light off. Turning Light on.");

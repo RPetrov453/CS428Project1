@@ -15,12 +15,14 @@ public class RodenLightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("CheckOrientation", 2f,2f);
+        InvokeRepeating("CheckOrientation", 2f, 2f);
     }
 
     bool UpsideDown = false;
     bool specialLight = false;
     bool justTurnedOff = false;
+
+
 
 
     // 0 is normal,
@@ -40,7 +42,7 @@ public class RodenLightScript : MonoBehaviour
 
         if (Roden.transform.up.y < 0f) //Are upsidedown.
         {
-            //Debug.Log("We just went upside down.");
+            Debug.Log("We just went upside down.");
 
             UpsideDown = true;
             if (specialLight == true)
@@ -53,12 +55,12 @@ public class RodenLightScript : MonoBehaviour
 
 
         }
-        else if (Roden.transform.up.y > 0f) //Upright 
+        if (Roden.transform.up.y > 0f) //Upright 
         {
-            //Debug.Log("Went upright.");
+            Debug.Log("Currently upright.");
             if (UpsideDown == true && specialLight == false && justTurnedOff == false) //Activated the toggle, turn light on.
             {
-                //Debug.Log("Went upright after the toggle, with light off. Turning Light on.");
+                Debug.Log("Went upright after the toggle, with light off. Turning Light on.");
                 RodenLight.GetComponent<Light>().color = new Color(.56f, .30f, .35f);
                 RodenLight.GetComponent<Light>().intensity = 1.2f;
                 UpsideDown = false;
