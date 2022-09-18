@@ -36,23 +36,23 @@ public class TsarevetsTimeScript : MonoBehaviour
             else
             {
                 // print out the weather data to make sure it makes sense
-                Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
+                //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
 
-                Debug.Log(":\nThe Date/Time: " + webRequest.downloadHandler.text.IndexOf("datetime"));
+                //Debug.Log(":\nThe Date/Time: " + webRequest.downloadHandler.text.IndexOf("datetime"));
                 int indexDT = webRequest.downloadHandler.text.IndexOf("datetime");
                 int indexDW = webRequest.downloadHandler.text.IndexOf("day_of_week");
                 string datetime = webRequest.downloadHandler.text[indexDT..indexDW];
 
 
-                Debug.Log(":\nCropped to Date/Time: " + datetime);
+                //Debug.Log(":\nCropped to Date/Time: " + datetime);
                 int indexTime = datetime.IndexOf("T");
-                Debug.Log(":\nCropped Time: " + datetime[(indexTime+1)..(indexTime+6)]);
+                //Debug.Log(":\nCropped Time: " + datetime[(indexTime+1)..(indexTime+6)]);
                 string time = datetime[(indexTime + 1)..(indexTime + 6)];
                 string Testhours = time[0..2];
-                Debug.Log(":\nTest Hours: " + Testhours);
+                //Debug.Log(":\nTest Hours: " + Testhours);
                 int hours = int.Parse(time[0..2]);
 
-                Debug.Log(":\nCropped Hours: " + hours);
+                //Debug.Log(":\nCropped Hours: " + hours);
                 //Debug.Log(":\nCropped String: " + webRequest.downloadHandler.text[(indexDT+10)..]);
 
                 //string date = Regex.Match(webRequest.downloadHandler.text, @"^\d{4}-\d{2}-\d{2}").Value;

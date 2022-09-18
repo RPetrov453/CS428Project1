@@ -35,12 +35,12 @@ public class TsarevetsAPIScript : MonoBehaviour
 
             if (webRequest.result == UnityWebRequest.Result.ConnectionError)
             {
-                Debug.Log(": Error: " + webRequest.error);
+                //Debug.Log(": Error: " + webRequest.error);
             }
             else
             {
                 // print out the weather data to make sure it makes sense
-                Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
+                //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
 
                 // this code will NOT fail gracefully, so make sure you have
                 // your API key before running or you will get an error
